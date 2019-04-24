@@ -1,0 +1,19 @@
+{
+  "name": "medicosSuper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.2.1",
+    "graphql-tools": "^4.0.4",
+    "mongoose": "^5.5.2"
+  }
+}

@@ -1,0 +1,19 @@
+version: '2'
+services:
+  web:
+    build: .
+    environment:
+      PRESTADORES_URL: https://api.superdesalud.gob.cl/prestadores/v1/prestadores/
+      PRESTADORES_APIKEY: c5ddb7355c548e726d04fac8cf35a5d43468d5e4
+      USE_ONLY_DATABASE: true
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db      
+  db:
+    container_name: db
+    image: mongo:3.2
+    command: mongod --smallfiles      
