@@ -23,5 +23,5 @@ const PrestadorSchema = new Schema({
   data: String
 });
 
-const Prestador = mongoose.model('prestadores', PrestadorSchema)
+const Prestador = mongoose.model('Prestador', PrestadorSchema);
 export default Prestador; 

@@ -2,22 +2,18 @@ import express from 'express';
 import { graphiqlExpress, graphqlExpress } from 'apollo-server-express';
 import { makeExecutableSchema } from 'graphql-tools';
 const app = express();
-
-//Mongo Connect
-import mongoose from 'mongoose';
-mongoose.connect('mongodb://db/graphql',{ useNewUrlParser: true })
-.then(() => console.log('mongo connect'))
-.catch(err => console.log(err));
+require('./config/mongo.js');
+require('./config/kue.js');
 
 //mongodb models
-import Prestador from './model/prestador';
-
+import Prestador from './models/prestador';
 
 //Import Schema and Resolver and Routes
 
 //Prestador
-import typeDefs_prestadores from './model/schema/prestador_schema';
-import resolvers_prestadores from './model/resolvers/prestador_resolvers';
+import typeDefs_prestadores from './models/schema/prestador_schema';
+import resolvers_prestadores from './models/resolvers/prestador_resolvers';
+
 const schema_prestador = makeExecutableSchema({
   typeDefs: typeDefs_prestadores,
   resolvers: resolvers_prestadores
