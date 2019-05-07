@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
-const Schema = mongoose.Schema;
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-const PrestadorSchema = new Schema({
+var PrestadorSchema = new Schema({
   rut: String,
   nombres: String, 
   apellidoPaterno: String,
@@ -23,5 +23,5 @@ const PrestadorSchema = new Schema({
   data: String
 });
 
-const Prestador = mongoose.model('Prestador', PrestadorSchema);
-export default Prestador; 
+var Prestador = mongoose.model('Prestador', PrestadorSchema);
+module.exports =  Prestador;

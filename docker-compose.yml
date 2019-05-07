@@ -1,16 +1,18 @@
 version: '2'
+
 services:
   web:
     build: .
     environment:
       PRESTADORES_URL: https://api.superdesalud.gob.cl/prestadores/v1/prestadores/
       PRESTADORES_APIKEY: c5ddb7355c548e726d04fac8cf35a5d43468d5e4
-      USE_ONLY_DATABASE: 0
+      TYPE_SWITCH: 2 #0 Se conecta directo a la api y actualiza la base de datos || #1 Se conecta solo a la base de datos || #2 Se conecta a la base de datos luego a la api y actualiza la base de datos.
       KUE_PREFIX: queue
-      REDIS_ADDR: redis:6379      
+      REDIS_ADDR: redis:6379
+      WEBHOOK_SLACK: https://hooks.slack.com/services/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
     volumes:
       - .:/app
-      - /app/node_modules
+      - /app/node_modules    
     ports:
       - "3000:3000"
       - "5000:5000"

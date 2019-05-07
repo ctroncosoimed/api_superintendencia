@@ -4,7 +4,7 @@ var kue = require('kue')
 require('../../config/mongo.js');
 
 //mongodb models
-import Prestador from '../../models/prestador'; 
+var Prestador =  require('../../models/prestador'); 
 
 // Process
 queue.process('prestador', (job, done) => {
@@ -30,7 +30,11 @@ const update_prestador = (prestador, callback) => {
       search
       .updateOne(prestador)
         .then(function(resultado){
-          console.log('|>>> Update Complete '+JSON.stringify(resultado));
+          if(resultado.nModified == 0){
+            console.log(resultado.nModified+"|>>> No se actualizo ninguna fila");
+          }else{
+            console.log(resultado.nModified+"|>>> Actualizado correctamente ");
+          }
       })
       .catch((err) => {
         console.log('Error: ' + err);

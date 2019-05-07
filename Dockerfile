@@ -4,14 +4,26 @@ WORKDIR /app
 
 COPY package*.json /app
 
-RUN npm install express express-graphql graphql graphql-tools mongoose faker kue graphql-yup-middleware node-fetch async --save
-RUN npm install apollo-server-express@1.3.2 --save
-RUN npm install babel-cli babel-core babel-preset-env -D
+RUN npm install
+RUN npm install express -g
+RUN npm install node-fetch --save
+RUN npm install graphql express-graphql graphql-tools graphql-yup-middleware --save
+
+RUN npm install async
+RUN npm install gulp
+RUN npm install -g gulp-cli --save
+RUN npm install kue
+RUN npm install --save apollo-server-express@1.3.2
 RUN npm install --save-dev nodemon
-RUN npm i --save @std/esm
+
+RUN npm install -g jake
+RUN npm install --save express-error-slack
+
+RUN npm install slack-node
 
 COPY . /app
 
 CMD npm run dev
+
 
 EXPOSE 5000

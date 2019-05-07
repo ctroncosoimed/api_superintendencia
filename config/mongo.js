@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://db/graphql',{ useNewUrlParser: true })
 .then(() => console.log('mongo connect'))
