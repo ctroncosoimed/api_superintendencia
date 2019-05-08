@@ -4,4 +4,5 @@
 - Mongoose
 - Kue
 - Redis
-- Gulp
+- Jake
+- Slack
