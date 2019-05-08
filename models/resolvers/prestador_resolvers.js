@@ -11,7 +11,7 @@ export default {
 
         case "0": // Se conecta directamente a la api y actualiza la base de datos
            
-          const result = await fetch(process.env.PRESTADORES_URL+rut+'.json/?auth_key='+process.env.PRESTADORES_APIKEY)
+          var result = await fetch(process.env.PRESTADORES_URL+rut+'.json/?auth_key='+process.env.PRESTADORES_APIKEY)
           .then(response => response.json())
           .then(data => {
             console.log("true response");
