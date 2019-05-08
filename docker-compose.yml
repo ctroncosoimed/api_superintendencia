@@ -2,7 +2,7 @@ version: '2'
 
 services:
   web:
-    build: .
+    build: .    
     environment:
       PRESTADORES_URL: https://api.superdesalud.gob.cl/prestadores/v1/prestadores/
       PRESTADORES_APIKEY: c5ddb7355c548e726d04fac8cf35a5d43468d5e4
@@ -10,6 +10,7 @@ services:
       KUE_PREFIX: queue
       REDIS_ADDR: redis:6379
       WEBHOOK_SLACK: https://hooks.slack.com/services/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
+      TZ: America/Santiago
     volumes:
       - .:/app
       - /app/node_modules    
