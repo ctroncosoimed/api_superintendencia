@@ -19,6 +19,7 @@ RUN npm install -g jake
 RUN npm install --save express-error-slack
 
 RUN npm install slack-node
+RUN npm install babel-cli babel-core babel-preset-env -D
 
 COPY . /app
 
