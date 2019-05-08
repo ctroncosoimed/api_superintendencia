@@ -24,5 +24,3 @@ RUN npm install babel-cli babel-core babel-preset-env -D
 COPY . /app
 
 CMD npm run dev
-
-EXPOSE 5100
