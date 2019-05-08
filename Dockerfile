@@ -25,4 +25,4 @@ COPY . /app
 
 CMD npm run dev
 
-EXPOSE 5000
+EXPOSE 5100
