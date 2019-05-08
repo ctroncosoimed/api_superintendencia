@@ -4,7 +4,6 @@ WORKDIR /app
 
 COPY package*.json /app
 
-RUN npm install
 RUN npm install express -g
 RUN npm install node-fetch --save
 RUN npm install graphql express-graphql graphql-tools graphql-yup-middleware --save
@@ -24,6 +23,5 @@ RUN npm install slack-node
 COPY . /app
 
 CMD npm run dev
-
 
 EXPOSE 5000
