@@ -21,6 +21,9 @@ var PrestadorSchema = new Schema({
   email: String,
   estado: String,
   data: String
+},
+{
+  timestamps: true
 });
 
 var Prestador = mongoose.model('Prestador', PrestadorSchema);
