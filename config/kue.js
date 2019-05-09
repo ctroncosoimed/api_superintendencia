@@ -3,4 +3,4 @@ var kue = require('kue'),
     redis: 'redis://redis:6379'
   });
 
-kue.app.listen(5000);
+kue.app.listen(process.env.PORT_KUE);

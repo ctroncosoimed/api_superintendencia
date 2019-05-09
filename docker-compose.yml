@@ -12,12 +12,12 @@ services:
       WEBHOOK_SLACK: https://hooks.slack.com/services/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
       TZ: America/Santiago
       PORT: 3100
+      PORT_KUE: 3100
     volumes:
       - .:/app
       - /app/node_modules    
     ports:
       - "3100:3100"
-      - "5000:5000"
     depends_on:
       - db
       - redis
