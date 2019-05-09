@@ -1,6 +1,6 @@
 const kue = require('kue')
     , async = require('async')
-    , queue = kue.createQueue({ redis: `redis://redis` });
+    , queue = kue.createQueue({ redis: process.env.REDIS_ADDR });
 
   
 const asyncQueue = async.queue((data, callback) => {

@@ -13,6 +13,7 @@ services:
       TZ: America/Santiago
       PORT: 3100
       PORT_KUE: 5100
+      REDIS_ADDR: redis://redis:6379
     volumes:
       - .:/app
       - /app/node_modules    
@@ -33,6 +34,8 @@ services:
   initialize:
     build: .
     command: "npx babel-node jobs/initialize/run.js"
+    environment:
+      REDIS_ADDR: redis://redis:6379
     ports:
       - "5100:5100"      
     depends_on:

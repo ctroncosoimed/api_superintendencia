@@ -1,5 +1,5 @@
 var kue = require('kue')
- , queue = kue.createQueue({ redis: `redis://redis` }); 
+ , queue = kue.createQueue({ redis: process.env.REDIS_ADDR }); 
 
 require('../../config/mongo.js');
 
