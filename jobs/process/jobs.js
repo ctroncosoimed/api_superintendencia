@@ -21,6 +21,7 @@ asyncQueue.drain = () => {
 
 module.exports = {
   savePrestador: function(data){
+    data.title = `Procesando : ${data.rut}`;
     asyncQueue.push(data);
   }
 }
