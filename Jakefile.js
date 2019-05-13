@@ -1,0 +1,1 @@
+require('./lib/carga_medicos');
